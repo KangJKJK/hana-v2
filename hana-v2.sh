@@ -44,6 +44,7 @@ case $choice in
     sudo apt update
     sudo apt install -y python3 python3-pip
     pip install -r requirements.txt
+    sudo ln -s /usr/bin/python3 /usr/bin/python
 
     # 프라이빗키를 입력받기 위한 초기화
     echo "개인키를 줄바꿈으로 입력하세요. (입력을 종료하려면 엔터를 두 번 누르세요):"
@@ -121,6 +122,7 @@ case $choice in
     echo -e "${GREEN}Hanafuda 봇을 재실행합니다.${NC}"
     
     cd "$WORK"
+    sudo ln -s /usr/bin/python3 /usr/bin/python
 
     # 봇 구동
     python3 main.py
