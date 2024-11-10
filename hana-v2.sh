@@ -21,7 +21,7 @@ read -p "선택: " choice
 
 case $choice in
   1)
-    echo -e "${GREEN}Humanity 봇을 새로 설치합니다.${NC}"
+    echo -e "${GREEN}Hanafuda 봇을 새로 설치합니다.${NC}"
 
     # 사전 필수 패키지 설치
     echo -e "${YELLOW}시스템 업데이트 및 필수 패키지 설치 중...${NC}"
@@ -114,22 +114,16 @@ case $choice in
     read -p "Deposit을 하셨다면 엔터를 눌러주세요.: "
 
     # 봇 구동
-    python3 bot.py
+    python3 main.py
     ;;
     
   2)
-    echo -e "${GREEN}Humanity 봇을 재실행합니다.${NC}"
+    echo -e "${GREEN}Hanafuda 봇을 재실행합니다.${NC}"
     
     cd "$WORK"
 
-    # 파이썬 및 필요한 패키지 설치
-    echo -e "${YELLOW}시스템 업데이트 및 필수 패키지 설치 중...${NC}"
-    sudo apt update
-    sudo apt install -y python3 python3-pip
-    pip install -r requirements.txt
-
     # 봇 구동
-    python3 bot.py
+    python3 main.py
     ;;
 
   *)
