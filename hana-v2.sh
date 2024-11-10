@@ -141,4 +141,4 @@ case $choice in
   *)
     echo -e "${RED}잘못된 선택입니다. 다시 시도하세요.${NC}"
     ;;
-esac
+ esac
