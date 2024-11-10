@@ -39,6 +39,22 @@ case $choice in
     git clone https://github.com/nadirasaid8/hanafuda
     cd "$WORK"
 
+    # 사용자에게 네트워크 선택 요청
+    echo -e "${GREEN}어떤 네트워크를 사용하시겠습니까?${NC}"
+    echo -e "${YELLOW}1. Arbitrum${NC}"
+    echo -e "${YELLOW}2. Base${NC}"
+    read -p "선택 (1 또는 2): " network_choice
+
+    # 선택에 따라 rpc_url 수정
+    if [ "$network_choice" -eq 1 ]; then
+        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://arb1.arbitrum.io/rpc"|' $WORK/src/config.json
+    elif [ "$network_choice" -eq 2 ]; then
+        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://mainnet.base.org"|' $WORK/src/config.json
+    else
+        echo -e "${RED}잘못된 선택입니다. 기본값으로 Base 네트워크를 사용합니다.${NC}"
+        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://mainnet.base.org"|' $WORK/src/config.json
+    fi
+
     # 파이썬 및 필요한 패키지 설치
     echo -e "${YELLOW}시스템 업데이트 및 필수 패키지 설치 중...${NC}"
     sudo apt update
