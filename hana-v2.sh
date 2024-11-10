@@ -72,10 +72,7 @@ case $choice in
     {
         while IFS= read -r line; do
             # 빈 줄이 두 번 입력되면 종료
-            [[ -z "$line" ]] && { 
-                read -r next_line
-                [[ -z "$next_line" ]] && break
-            }
+            [[ -z "$line" ]] && break
             private_keys+=("$line")  # 배열에 추가
         done
     } 
@@ -108,10 +105,7 @@ case $choice in
     {
         while IFS= read -r line; do
             # 빈 줄이 두 번 입력되면 종료
-            [[ -z "$line" ]] && { 
-                read -r next_line
-                [[ -z "$next_line" ]] && break
-            }
+            [[ -z "$line" ]] && break
             refresh_tokens+=("$line")  # 배열에 추가
         done
     } 
@@ -147,4 +141,3 @@ case $choice in
   *)
     echo -e "${RED}잘못된 선택입니다. 다시 시도하세요.${NC}"
     ;;
-esac
