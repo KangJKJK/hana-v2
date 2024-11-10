@@ -47,12 +47,12 @@ case $choice in
 
     # 선택에 따라 rpc_url 수정
     if [ "$network_choice" -eq 1 ]; then
-        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://arb1.arbitrum.io/rpc"|' $WORK/src/config.json
+        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://arb1.arbitrum.io/rpc"|' $WORK/config.json
     elif [ "$network_choice" -eq 2 ]; then
-        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://mainnet.base.org"|' $WORK/src/config.json
+        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://mainnet.base.org"|' $WORK/config.json
     else
         echo -e "${RED}잘못된 선택입니다. 기본값으로 Base 네트워크를 사용합니다.${NC}"
-        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://mainnet.base.org"|' $WORK/src/config.json
+        sed -i 's|"rpc_url": ".*"|"rpc_url": "https://mainnet.base.org"|' $WORK/config.json
     fi
 
     # 파이썬 및 필요한 패키지 설치
