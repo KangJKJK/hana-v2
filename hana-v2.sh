@@ -2,7 +2,6 @@
 
 # 환경 변수 설정
 export WORK="/root/hanafuda"
-export NVM_DIR="$HOME/.nvm"
 
 # 색상 정의
 GREEN='\033[0;32m'
